@@ -1,0 +1,46 @@
+﻿@page "/"
+@using KK.BusinessCards.Apps.BlazorServer.BlazorComponents
+@using KK.BusinessCards.Apps.BlazorServer.ViewModels;
+
+
+@if(DataContext.ShowEditor)
+{
+    <CardEditor DataContext="DataContext" />
+}
+else
+{
+    
+    <h1>Business Cards Overview</h1>
+    <div class="buttonBar">
+        <button class="btn btn-success"
+            @onclick="() => DataContext.StartCreateCardCommand.Execute(null)">Add new</button>
+
+        <button class="btn btn-primary"
+        @onclick="() => DataContext.EditCardCommand.Execute(null)">Edit selected</button>
+
+        <button class="btn btn-danger"
+            @onclick="() => DataContext.DeleteCardCommand.Execute(null)">
+            Delete selected
+        </button>
+
+    </div>
+    
+    @if(DataContext.CardList.Count == 0)
+    {
+        <p>No cards available.</p>
+    }
+    else
+    {
+        <ul class="horizontal">
+        @foreach(BusinessCardViewModel cardViewModel in DataContext.CardList)
+        {
+            
+            <li @onclick="() => HandleCardClick(cardViewModel.BusinessCard.GUID)">
+                <BusinessCardView DataContext="@cardViewModel" />
+            </li>
+            
+        }
+        </ul>
+    }
+}
+

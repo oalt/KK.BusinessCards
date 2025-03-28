@@ -1,0 +1,12 @@
+﻿<span class="@(DataContext.IsSelected ? "card isSelected" : "card notSelected")">
+    <strong>@DataContext.Title @DataContext.FirstName @DataContext.LastName</strong>
+    
+    <span class="smallText">
+        @DataContext.Company <br />
+        @DataContext.Street @DataContext.HouseNumber<br />
+        @DataContext.ZipCode @DataContext.City<br />
+        @DataContext.Phone <br />
+        @DataContext.Mobile <br />
+        @DataContext.Email
+    </span>
+</span>

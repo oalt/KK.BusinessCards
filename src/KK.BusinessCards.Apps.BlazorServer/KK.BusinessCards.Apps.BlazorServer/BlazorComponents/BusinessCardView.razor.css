@@ -1,0 +1,20 @@
+﻿.isSelected {
+    background-color: yellow;
+}
+
+.notSelected {
+    background-color: white;
+}
+
+.card {
+    width: 300px;
+    min-height: 100px;
+    box-shadow: 5px 5px lightgray;
+    border: 1px solid #000;
+    border-radius: unset;
+    padding: 5px;
+}
+
+.smallText {
+    font-size: 0.75Em;
+}
