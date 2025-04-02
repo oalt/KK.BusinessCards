@@ -4,7 +4,7 @@ using KK.BusinessCards.Apps.BlazorServer.ViewModels;
 namespace KK.BusinessCards.Apps.BlazorServer
 {
     public class Program
-    {
+    { 
         public static void Main(string[] arguments)
         {
       
